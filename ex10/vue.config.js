@@ -3,7 +3,7 @@ module.exports = {
         workboxOptions: {
             runtimeCaching: [{
                     urlPattern: /\.png$/,
-                    handler: 'cacheFirst',
+                    handler: 'CacheFirst',
                     options: {
                         cacheName: 'png-cache',
                         expiration: {
@@ -14,7 +14,7 @@ module.exports = {
                 },
                 {
                     urlPattern: /\.json$/,
-                    handler: 'staleWhileRevalidate',
+                    handler: 'StaleWhileRevalidate',
                     options: {
                         cacheName: 'json-cache',
                         cacheableResponse: {
@@ -25,7 +25,8 @@ module.exports = {
             ],
         }
     },
-    devServer: {
-        disableHostCheck: true
-    }
+
+    transpileDependencies: [
+      'vuetify'
+    ]
 }
